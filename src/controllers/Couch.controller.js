@@ -70,7 +70,7 @@ const updateCoach = async(req , res) => {
         }
 
         existingCoach.coachType = coachType;
-        existingCoach.seatCapacity = numberOfSeat;
+        existingCoach.numberOfSeat = numberOfSeat;
         existingCoach.price = price;
 
         await existingCoach.save();

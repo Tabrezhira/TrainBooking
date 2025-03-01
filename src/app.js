@@ -8,6 +8,7 @@ const path = require("path");
 const  {connectDB } = require("./config/db");
 const coachRoutes = require('./routes/coachRoutes.js')
 const trainRoutes = require('./routes/trainRoutes.js')
+const bookingRoutes = require('./routes/bookingRoutes.js')
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use('/api/user', UserRoutes)
 app.use('/api/station',stationRoutes)
 app.use('/api/coach',coachRoutes)
 app.use('/api/train',trainRoutes)
+app.use('/api/booking',bookingRoutes)
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/dist")));

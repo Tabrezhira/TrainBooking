@@ -9,7 +9,7 @@ router.post("/addStation",protectRoute,addStation)
 router.patch("/updateStation/:stationCode",protectRoute,updateStation)
 
 router.get('/allStation',protectRoute,allStation)
-router.get("/getAllTrain/:stationCode",protectRoute,getAllTrain)
+router.get("/getAllTrain/:stationId",protectRoute,getAllTrain)
 
 router.get('/fromToTrain',protectRoute,fromToTrain)
 

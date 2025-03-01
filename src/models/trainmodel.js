@@ -33,11 +33,6 @@ const trainSchema = new mongoose.Schema({
         type: String, // Store time as "HH:mm"
         required: true,
     },
-    totalSeats: {
-        type: Number, // Change to number
-        required: true,
-    },
-
     createdBy:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

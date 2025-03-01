@@ -32,7 +32,7 @@ const bookingSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["Confirmed", "Cancelled", "Pending"],
+        enum: ["Confirmed", "Cancelled", "Waiting"],
         required: true,
         default:'Pending'
     },
@@ -51,7 +51,7 @@ const bookingSchema = new mongoose.Schema({
     paymentStatus: {
         type: String,
         enum: ["Paid", "Unpaid"],
-        default: "Unpaid"
+        default: "Paid"
     },
     trainName:{
         type:String,

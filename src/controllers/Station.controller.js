@@ -136,7 +136,7 @@ const allStation = async(req , res) => {
 
 const getAllTrain = async(req , res) => {
     try {
-        const { stationCode } = req.params;
+        const { stationId } = req.params;
         const userId = req.user._id;
 
         if(!userId){
@@ -148,7 +148,7 @@ const getAllTrain = async(req , res) => {
             return res.status(400).json({ message: "Invalid credentials" });
         }
 
-        const station = await Station.findOne({ stationCode: stationCode }).populate("train_ids", "trainNumber trainName departureTime arrivalTime");
+        const station = await Station.findById(stationId ).populate("train_ids", "trainNumber trainName departureTime arrivalTime");
 
         if (!station) {
           return res.status(404).json({ message: "Station not found" });
